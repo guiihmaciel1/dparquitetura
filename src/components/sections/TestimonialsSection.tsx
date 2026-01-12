@@ -31,7 +31,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 md:py-32 bg-background overflow-hidden">
+    <section className="py-28 md:py-36 bg-muted overflow-hidden">
       <div className="container-custom">
         {/* Header */}
         <SectionTitle
@@ -41,7 +41,7 @@ export function TestimonialsSection() {
         />
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mt-16 md:mt-20">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -49,18 +49,18 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="relative"
+              className="relative group"
             >
-              <div className="p-8 bg-muted h-full">
+              <div className="p-8 md:p-10 bg-background border border-border h-full hover:border-accent/50 hover:shadow-lg transition-all duration-300">
                 {/* Quote Icon */}
                 <Quote
-                  size={32}
-                  className="text-accent/30 mb-6"
+                  size={40}
+                  className="text-accent/40 mb-6"
                   strokeWidth={1}
                 />
 
                 {/* Quote Text */}
-                <blockquote className="text-foreground/80 leading-relaxed mb-8">
+                <blockquote className="text-foreground leading-relaxed mb-8 text-[15px]">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 

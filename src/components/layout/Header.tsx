@@ -72,21 +72,6 @@ export function Header() {
           ))}
         </nav>
 
-        {/* CTA Button - Desktop */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="hidden md:block"
-        >
-          <Link
-            href="/contato"
-            className="px-6 py-2.5 bg-accent text-primary font-medium text-sm tracking-wide hover:bg-accent-dark transition-colors duration-300"
-          >
-            Iniciar Projeto
-          </Link>
-        </motion.div>
-
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -124,20 +109,6 @@ export function Header() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.25 }}
-                className="pt-4"
-              >
-                <Link
-                  href="/contato"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="inline-block px-6 py-3 bg-accent text-primary font-medium text-sm tracking-wide"
-                >
-                  Iniciar Projeto
-                </Link>
-              </motion.div>
             </nav>
           </motion.div>
         )}

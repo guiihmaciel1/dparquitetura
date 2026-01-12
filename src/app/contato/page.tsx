@@ -68,14 +68,18 @@ export default function ContatoPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-muted">
+      <section 
+        className="bg-muted"
+        style={{ paddingTop: '10rem', paddingBottom: '4rem' }}
+      >
         <div className="container-custom">
-          <div className="max-w-3xl">
+          <div style={{ maxWidth: '48rem' }}>
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-block text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4"
+              className="inline-block text-muted-foreground"
+              style={{ fontSize: '0.75rem', letterSpacing: '0.3em', textTransform: 'uppercase', marginBottom: '1rem' }}
             >
               Contato
             </motion.span>
@@ -83,7 +87,8 @@ export default function ContatoPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-6"
+              className="font-serif font-medium"
+              style={{ fontSize: 'clamp(2.25rem, 5vw, 3.75rem)', marginBottom: '1.5rem' }}
             >
               Vamos Conversar
             </motion.h1>
@@ -91,7 +96,8 @@ export default function ContatoPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg md:text-xl text-muted-foreground leading-relaxed"
+              className="text-muted-foreground leading-relaxed"
+              style={{ fontSize: 'clamp(1.125rem, 2vw, 1.25rem)' }}
             >
               Estou pronta para ouvir suas ideias e transformá-las em realidade. 
               Cada detalhe importa, e eu quero conhecer o seu sonho.
@@ -101,9 +107,19 @@ export default function ContatoPage() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 md:py-28 bg-background">
+      <section 
+        className="bg-background"
+        style={{ paddingTop: '5rem', paddingBottom: '7rem' }}
+      >
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div 
+            style={{ 
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(1, 1fr)', 
+              gap: '4rem' 
+            }}
+            className="lg:grid-cols-2 lg:gap-24"
+          >
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -111,29 +127,46 @@ export default function ContatoPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-serif text-2xl md:text-3xl mb-8">
+              <h2 
+                className="font-serif"
+                style={{ fontSize: 'clamp(1.5rem, 3vw, 1.875rem)', marginBottom: '2rem' }}
+              >
                 Informações de Contato
               </h2>
 
-              <div className="space-y-6 mb-12">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                 {contactInfo.map((item) => (
-                  <div key={item.label} className="flex items-start gap-4">
-                    <div className="w-12 h-12 flex-shrink-0 border border-border flex items-center justify-center">
+                  <div key={item.label} style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                    <div 
+                      className="border border-border"
+                      style={{ 
+                        width: '3rem', 
+                        height: '3rem', 
+                        flexShrink: 0, 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center' 
+                      }}
+                    >
                       <item.icon size={20} className="text-accent" />
                     </div>
                     <div>
-                      <span className="block text-xs tracking-wider uppercase text-muted-foreground mb-1">
+                      <span 
+                        className="text-muted-foreground"
+                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.25rem' }}
+                      >
                         {item.label}
                       </span>
                       {item.href ? (
                         <a
                           href={item.href}
-                          className="text-foreground hover:text-accent transition-colors whitespace-pre-line"
+                          className="text-foreground hover:text-accent transition-colors"
+                          style={{ whiteSpace: 'pre-line' }}
                         >
                           {item.value}
                         </a>
                       ) : (
-                        <span className="whitespace-pre-line">{item.value}</span>
+                        <span style={{ whiteSpace: 'pre-line' }}>{item.value}</span>
                       )}
                     </div>
                   </div>
@@ -141,29 +174,36 @@ export default function ContatoPage() {
               </div>
 
               {/* CAU Badge */}
-              <div className="flex items-center gap-3 p-4 bg-muted mb-8">
+              <div 
+                className="bg-muted"
+                style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1rem', marginBottom: '2rem' }}
+              >
                 <Award size={20} className="text-accent" />
                 <div>
-                  <span className="block text-xs tracking-wider uppercase text-muted-foreground">
+                  <span 
+                    className="text-muted-foreground"
+                    style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}
+                  >
                     Registro CAU
                   </span>
-                  <span className="font-medium">A135139-7</span>
+                  <span style={{ fontWeight: 500 }}>A135139-7</span>
                 </div>
               </div>
 
               {/* Social Links */}
               <div>
-                <h3 className="text-sm font-medium tracking-wider uppercase mb-4">
+                <h3 style={{ fontSize: '0.875rem', fontWeight: 500, letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '1rem' }}>
                   Redes Sociais
                 </h3>
-                <div className="flex gap-4">
+                <div style={{ display: 'flex', gap: '1rem' }}>
                   {socialLinks.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center border border-border hover:border-accent hover:text-accent transition-colors"
+                      className="border border-border hover:border-accent hover:text-accent transition-colors"
+                      style={{ width: '3rem', height: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                       aria-label={social.label}
                     >
                       <social.icon size={20} />
@@ -173,11 +213,20 @@ export default function ContatoPage() {
               </div>
 
               {/* WhatsApp CTA */}
-              <div className="mt-12 p-8 bg-muted">
-                <h3 className="font-serif text-xl mb-3">
+              <div 
+                className="bg-muted"
+                style={{ marginTop: '3rem', padding: '2rem' }}
+              >
+                <h3 
+                  className="font-serif"
+                  style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}
+                >
                   Prefere WhatsApp?
                 </h3>
-                <p className="text-sm text-muted-foreground mb-6">
+                <p 
+                  className="text-muted-foreground"
+                  style={{ fontSize: '0.875rem', marginBottom: '1.5rem' }}
+                >
                   Atendo também pelo WhatsApp para maior agilidade. 
                   Vamos conversar sobre seu projeto!
                 </p>
@@ -185,7 +234,17 @@ export default function ContatoPage() {
                   href="https://wa.me/5517999999999?text=Olá! Gostaria de saber mais sobre os serviços de arquitetura."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white text-sm tracking-wide hover:bg-[#128C7E] transition-colors"
+                  className="hover:bg-[#128C7E] transition-colors"
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '0.5rem', 
+                    padding: '0.75rem 1.5rem', 
+                    backgroundColor: '#25D366', 
+                    color: 'white', 
+                    fontSize: '0.875rem', 
+                    letterSpacing: '0.025em' 
+                  }}
                 >
                   Chamar no WhatsApp
                 </a>
@@ -199,7 +258,10 @@ export default function ContatoPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-serif text-2xl md:text-3xl mb-8">
+              <h2 
+                className="font-serif"
+                style={{ fontSize: 'clamp(1.5rem, 3vw, 1.875rem)', marginBottom: '2rem' }}
+              >
                 Envie uma Mensagem
               </h2>
 
@@ -207,16 +269,24 @@ export default function ContatoPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="p-12 bg-muted text-center"
+                  className="bg-muted"
+                  style={{ padding: '3rem', textAlign: 'center' }}
                 >
                   <CheckCircle
                     size={48}
-                    className="mx-auto text-accent mb-6"
+                    className="text-accent"
+                    style={{ margin: '0 auto 1.5rem' }}
                   />
-                  <h3 className="font-serif text-2xl mb-4">
+                  <h3 
+                    className="font-serif"
+                    style={{ fontSize: '1.5rem', marginBottom: '1rem' }}
+                  >
                     Mensagem Enviada!
                   </h3>
-                  <p className="text-muted-foreground mb-6">
+                  <p 
+                    className="text-muted-foreground"
+                    style={{ marginBottom: '1.5rem' }}
+                  >
                     Obrigada pelo contato! Retornarei em breve para conversarmos 
                     sobre seu projeto.
                   </p>
@@ -231,18 +301,20 @@ export default function ContatoPage() {
                         message: "",
                       });
                     }}
-                    className="text-sm text-accent hover:underline"
+                    className="text-accent hover:underline"
+                    style={{ fontSize: '0.875rem' }}
                   >
                     Enviar nova mensagem
                   </button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.5rem' }} className="md:grid-cols-2">
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-xs tracking-wider uppercase text-muted-foreground mb-2"
+                        className="text-muted-foreground"
+                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
                       >
                         Nome *
                       </label>
@@ -253,14 +325,16 @@ export default function ContatoPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                        className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                        style={{ width: '100%', padding: '0.75rem 1rem' }}
                         placeholder="Seu nome"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-xs tracking-wider uppercase text-muted-foreground mb-2"
+                        className="text-muted-foreground"
+                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
                       >
                         Email *
                       </label>
@@ -271,17 +345,19 @@ export default function ContatoPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                        className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                        style={{ width: '100%', padding: '0.75rem 1rem' }}
                         placeholder="seu@email.com"
                       />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.5rem' }} className="md:grid-cols-2">
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-xs tracking-wider uppercase text-muted-foreground mb-2"
+                        className="text-muted-foreground"
+                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
                       >
                         Telefone
                       </label>
@@ -291,14 +367,16 @@ export default function ContatoPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                        className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                        style={{ width: '100%', padding: '0.75rem 1rem' }}
                         placeholder="(17) 99999-9999"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="subject"
-                        className="block text-xs tracking-wider uppercase text-muted-foreground mb-2"
+                        className="text-muted-foreground"
+                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
                       >
                         Assunto *
                       </label>
@@ -308,7 +386,8 @@ export default function ContatoPage() {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-muted border border-border focus:border-accent focus:outline-none transition-colors appearance-none"
+                        className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                        style={{ width: '100%', padding: '0.75rem 1rem', appearance: 'none' }}
                       >
                         <option value="">Selecione...</option>
                         <option value="arquitetonico">Projeto Arquitetônico</option>
@@ -325,7 +404,8 @@ export default function ContatoPage() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-xs tracking-wider uppercase text-muted-foreground mb-2"
+                      className="text-muted-foreground"
+                      style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
                     >
                       Mensagem *
                     </label>
@@ -336,7 +416,8 @@ export default function ContatoPage() {
                       onChange={handleChange}
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-muted border border-border focus:border-accent focus:outline-none transition-colors resize-none"
+                      className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                      style={{ width: '100%', padding: '0.75rem 1rem', resize: 'none' }}
                       placeholder="Conte-me sobre seu projeto, suas ideias e o que você imagina para o espaço..."
                     />
                   </div>
@@ -344,7 +425,17 @@ export default function ContatoPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full md:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="bg-accent text-primary hover:bg-accent-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{ 
+                      display: 'inline-flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center', 
+                      gap: '0.5rem', 
+                      padding: '1rem 2rem', 
+                      fontSize: '0.875rem', 
+                      letterSpacing: '0.025em',
+                      width: 'fit-content'
+                    }}
                   >
                     {isSubmitting ? (
                       "Enviando..."

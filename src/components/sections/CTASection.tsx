@@ -6,7 +6,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="py-24 md:py-32 bg-muted relative overflow-hidden">
+    <section className="py-28 md:py-40 bg-background relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div
@@ -18,13 +18,13 @@ export function CTASection() {
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center px-4">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6"
+            className="inline-block text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mb-8"
           >
             Vamos Conversar
           </motion.span>
@@ -34,7 +34,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium mb-6"
+            className="font-serif text-3xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight"
           >
             Pronto para transformar seu{" "}
             <span className="italic text-accent">espaço</span>?
@@ -45,7 +45,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg text-muted-foreground mb-4 leading-relaxed"
+            className="text-base md:text-lg text-muted-foreground mb-6 leading-relaxed max-w-2xl mx-auto"
           >
             Entre em contato e vamos conversar sobre seu projeto. 
             Quero ouvir cada detalhe do seu sonho com atenção e sensibilidade.
@@ -56,7 +56,7 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="text-sm text-muted-foreground mb-10"
+            className="text-sm text-muted-foreground/80 mb-12"
           >
             Atendimento em Mirassol, São José do Rio Preto e região.
           </motion.p>
@@ -66,11 +66,11 @@ export function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
           >
             <Link
               href="/contato"
-              className="group flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-accent transition-all duration-300"
+              className="group flex items-center gap-3 px-10 py-4 bg-accent text-primary font-medium text-sm tracking-wide hover:bg-accent-dark transition-all duration-300"
             >
               Agendar Conversa
               <ArrowRight
@@ -82,7 +82,7 @@ export function CTASection() {
               href="https://wa.me/5517999999999?text=Olá! Gostaria de saber mais sobre os serviços de arquitetura."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-8 py-4 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-accent hover:text-accent transition-all duration-300"
+              className="flex items-center gap-3 px-10 py-4 border-2 border-accent text-accent text-sm tracking-wide hover:bg-accent hover:text-primary font-medium transition-all duration-300"
             >
               <MessageCircle size={16} />
               WhatsApp
