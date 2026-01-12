@@ -1,0 +1,140 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight, Award } from "lucide-react";
+import { SectionTitle } from "@/components/ui";
+import Image from "next/image";
+
+const stats = [
+  { number: "8+", label: "Anos de Experiência" },
+  { number: "2016", label: "Formação UNIRP" },
+  { number: "100%", label: "Dedicação" },
+];
+
+export function AboutPreview() {
+  return (
+    <section className="py-24 md:py-32 bg-background">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Image Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            {/* Main Image */}
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop"
+                alt="Debora Pieri - Arquiteta"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+            </div>
+            
+            {/* Decorative frame */}
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/30 -z-10" />
+            
+            {/* CAU badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="absolute -bottom-6 -left-6 bg-accent text-primary-foreground p-6 shadow-lg"
+            >
+              <Award size={20} className="mb-1" />
+              <span className="block text-xs tracking-wider uppercase">CAU</span>
+              <span className="block text-sm font-medium">A135139-7</span>
+            </motion.div>
+          </motion.div>
+
+          {/* Content Side */}
+          <div>
+            <SectionTitle
+              subtitle="Sobre"
+              title="Debora Pieri"
+              align="left"
+            />
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-8 space-y-6"
+            >
+              <p className="text-muted-foreground leading-relaxed">
+                Arquiteta formada pela UNIRP em 2016, com pós-graduação em Design de 
+                Interiores e Composições de Jardins. Minha paixão é criar espaços que 
+                contam histórias e refletem a personalidade única de cada cliente.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                O que me diferencia é o <strong>trabalho humanizado</strong>: a sensibilidade 
+                e paciência em ouvir cada detalhe. Me importo com o sentimento sobre 
+                aquele lugar. <em>Um local sem sentimento é apenas um local. Um espaço 
+                que importa é um lugar.</em>
+              </p>
+            </motion.div>
+
+            {/* Style Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-8 p-4 bg-muted border-l-4 border-accent"
+            >
+              <p className="text-sm text-muted-foreground">Estilo Arquitetônico</p>
+              <p className="font-serif text-xl text-accent">Contemporâneo Urbano</p>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border"
+            >
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center lg:text-left">
+                  <span className="block text-3xl md:text-4xl font-serif text-accent">
+                    {stat.number}
+                  </span>
+                  <span className="text-xs text-muted-foreground tracking-wider uppercase">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mt-12"
+            >
+              <Link
+                href="/sobre"
+                className="group inline-flex items-center gap-2 text-sm tracking-wide text-foreground hover:text-accent transition-colors"
+              >
+                Conheça minha história
+                <ArrowRight
+                  size={16}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
