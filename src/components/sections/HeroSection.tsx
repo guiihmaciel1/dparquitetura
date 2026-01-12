@@ -7,7 +7,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background com gradiente e padrão */}
+      {/* Background com gradiente */}
       <div className="absolute inset-0 bg-gradient-to-br from-muted via-background to-muted" />
       
       {/* Padrão geométrico sutil */}
@@ -18,9 +18,9 @@ export function HeroSection() {
         }}
       />
 
-      {/* Linhas decorativas */}
-      <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-border to-transparent opacity-50" />
-      <div className="absolute top-0 right-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-border to-transparent opacity-50" />
+      {/* Linhas decorativas verticais */}
+      <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-border to-transparent opacity-30" />
+      <div className="absolute top-0 right-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-border to-transparent opacity-30" />
 
       <div className="container-custom relative z-10 pt-20">
         <div className="max-w-5xl mx-auto text-center">
@@ -62,7 +62,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             Arquitetura contemporânea urbana com atendimento humanizado. 
             Transformo espaços em lugares que importam, com sensibilidade 
@@ -74,9 +74,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mb-8"
+            className="mb-10"
           >
-            <span className="inline-block px-4 py-2 bg-muted text-muted-foreground text-xs tracking-wider uppercase rounded-full">
+            <span className="inline-block px-4 py-2 bg-muted text-muted-foreground text-xs tracking-wider uppercase rounded-full border border-border">
               Mirassol • São José do Rio Preto • Região
             </span>
           </motion.div>
@@ -90,7 +90,7 @@ export function HeroSection() {
           >
             <Link
               href="/projetos"
-              className="group flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-accent transition-all duration-300"
+              className="group flex items-center gap-2 px-8 py-4 bg-accent text-primary font-medium text-sm tracking-wide hover:bg-accent-dark transition-all duration-300"
             >
               Ver Projetos
               <ArrowRight
@@ -124,20 +124,6 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Decorative Elements */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 1 }}
-        className="absolute top-1/4 right-[10%] w-32 h-32 md:w-48 md:h-48 border border-accent/20 rounded-full"
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-1/4 left-[5%] w-24 h-24 md:w-32 md:h-32 border border-accent/10"
-      />
     </section>
   );
 }

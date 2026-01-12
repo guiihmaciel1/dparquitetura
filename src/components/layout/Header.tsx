@@ -81,7 +81,7 @@ export function Header() {
         >
           <Link
             href="/contato"
-            className="px-6 py-2.5 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-accent transition-colors duration-300"
+            className="px-6 py-2.5 bg-accent text-primary font-medium text-sm tracking-wide hover:bg-accent-dark transition-colors duration-300"
           >
             Iniciar Projeto
           </Link>
@@ -133,7 +133,7 @@ export function Header() {
                 <Link
                   href="/contato"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="inline-block px-6 py-3 bg-primary text-primary-foreground text-sm tracking-wide"
+                  className="inline-block px-6 py-3 bg-accent text-primary font-medium text-sm tracking-wide"
                 >
                   Iniciar Projeto
                 </Link>
