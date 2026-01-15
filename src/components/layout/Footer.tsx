@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Instagram, MapPin, Phone, Award } from "lucide-react";
+import { GoogleReviewsBadge } from "@/components/ui";
 
 const footerLinks = {
   navegacao: [
@@ -11,6 +12,7 @@ const footerLinks = {
     { href: "/projetos", label: "Projetos" },
     { href: "/servicos", label: "Serviços" },
     { href: "/contato", label: "Contato" },
+    { href: "/faq", label: "FAQ" },
   ],
   servicos: [
     { href: "/servicos#arquitetonico", label: "Projeto Arquitetônico" },
@@ -60,7 +62,7 @@ export function Footer() {
               <span>CAU A135139-7</span>
             </div>
             {/* Social Links */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -74,6 +76,9 @@ export function Footer() {
                 </a>
               ))}
             </div>
+            
+            {/* Google Reviews Badge */}
+            <GoogleReviewsBadge variant="dark" />
           </div>
 
           {/* Navigation Column */}
@@ -142,14 +147,23 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-3 text-sm text-primary-foreground/70">
+                <a
+                  href="https://maps.google.com/?q=Av.+Fernando+Costa,+2451+-+Centro,+Mirassol+-+SP,+15130-025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
+                >
                   <MapPin size={18} className="mt-0.5 flex-shrink-0" />
                   <span>
-                    Mirassol, SP
+                    Av. Fernando Costa, 2451
                     <br />
-                    São José do Rio Preto e Região
+                    Prédio Comercial Miracenter
+                    <br />
+                    Centro, Mirassol - SP
+                    <br />
+                    CEP 15130-025
                   </span>
-                </div>
+                </a>
               </li>
             </ul>
           </div>

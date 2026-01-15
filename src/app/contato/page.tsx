@@ -21,9 +21,9 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    label: "Localização",
-    value: "Mirassol, SP\nSão José do Rio Preto e Região",
-    href: null,
+    label: "Endereço",
+    value: "Av. Fernando Costa, 2451\nPrédio Comercial Miracenter\nCentro, Mirassol - SP\nCEP 15130-025",
+    href: "https://maps.google.com/?q=Av.+Fernando+Costa,+2451+-+Centro,+Mirassol+-+SP,+15130-025",
   },
 ];
 

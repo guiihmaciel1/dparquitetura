@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui";
+import { SchemaOrg } from "@/components/seo";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -38,6 +39,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Debora Pieri" }],
   creator: "Debora Pieri Arquitetura",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -59,6 +67,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
+      <head>
+        <SchemaOrg />
+      </head>
       <body
         className={`${outfit.variable} ${cormorant.variable} antialiased bg-background text-foreground`}
       >
