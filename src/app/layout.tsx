@@ -54,6 +54,11 @@ export const metadata: Metadata = {
     description:
       "Escritório de arquitetura em Mirassol e região. Projetos residenciais, comerciais e design de interiores com atendimento humanizado.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Debora Pieri Arquitetura",
+    description: "Escritório de arquitetura em Mirassol e região. Projetos residenciais, comerciais e design de interiores.",
+  },
   robots: {
     index: true,
     follow: true,
