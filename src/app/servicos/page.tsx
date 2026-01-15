@@ -203,6 +203,10 @@ export default function ServicosPage() {
                       src={service.image}
                       alt={service.title}
                       fill
+                      loading="lazy"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgIBAwQDAAAAAAAAAAAAAQIDBAAFERIGITFBUWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAZEQACAwEAAAAAAAAAAAAAAAABAgADESH/2gAMAwEAAhEDEEA/AMq0fqLUdMhkgpWGijkbe4EjIHYbgEjuOx7Y5/Rl1yxYvahJauTPPK/l5GLMfsk5xjJGTsdBuf/Z"
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />

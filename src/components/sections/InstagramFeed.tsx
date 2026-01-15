@@ -77,6 +77,8 @@ export function InstagramFeed() {
                 src={post.imageUrl}
                 alt={post.caption}
                 fill
+                loading="lazy"
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
