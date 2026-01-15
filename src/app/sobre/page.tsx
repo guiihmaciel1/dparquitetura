@@ -110,7 +110,7 @@ export default function SobrePage() {
                   src="/debora.jpeg"
                   alt="Debora Pieri - Arquiteta"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/30 -z-10" />

@@ -31,10 +31,10 @@ export function AboutPreview() {
                 src="/debora.jpeg"
                 alt="Debora Pieri - Arquiteta"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
             
             {/* CAU badge */}
