@@ -60,7 +60,7 @@ export default function SobrePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-36 pb-16 md:pt-44 lg:pt-48 md:pb-20 bg-muted">
+      <section className="pt-60 pb-20 md:pt-72 lg:pt-80 md:pb-24 bg-muted">
         <div className="container-custom">
           <div className="max-w-3xl">
             <motion.span
@@ -94,7 +94,7 @@ export default function SobrePage() {
       </section>
 
       {/* About Content */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             {/* Image */}
@@ -121,7 +121,7 @@ export default function SobrePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="absolute -bottom-6 -left-6 bg-accent text-primary-foreground p-6 shadow-lg"
+                className="absolute bottom-4 left-4 bg-accent text-primary-foreground px-5 py-4 shadow-lg"
               >
                 <Award size={24} className="mb-2" />
                 <span className="block text-xs tracking-wider uppercase">CAU</span>
@@ -206,7 +206,7 @@ export default function SobrePage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 md:py-28 bg-muted">
+      <section className="py-24 md:py-32 bg-muted border-t border-border/60">
         <div className="container-custom">
           <SectionTitle
             subtitle="Filosofia"
@@ -214,7 +214,7 @@ export default function SobrePage() {
             description="Princípios fundamentais que norteiam cada projeto e relacionamento com meus clientes."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20 max-w-5xl mx-auto">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -222,7 +222,7 @@ export default function SobrePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center px-2"
               >
                 <div className="w-16 h-16 mx-auto mb-6 border border-accent/30 flex items-center justify-center">
                   <value.icon size={28} className="text-accent" strokeWidth={1.5} />
@@ -238,7 +238,7 @@ export default function SobrePage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-24 md:py-32 bg-background border-t border-border/60">
         <div className="container-custom">
           <SectionTitle
             subtitle="Trajetória"
@@ -246,7 +246,7 @@ export default function SobrePage() {
             description="Uma história de aprendizado, crescimento e realizações."
           />
 
-          <div className="max-w-3xl mx-auto mt-16">
+          <div className="max-w-4xl mx-auto mt-20">
             {timeline.map((item, index) => (
               <motion.div
                 key={`${item.year}-${index}`}
@@ -254,14 +254,14 @@ export default function SobrePage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex gap-8 pb-12 last:pb-0"
+                className="flex gap-10 pb-10 last:pb-0"
               >
-                <div className="flex-shrink-0 w-20 text-right">
+                <div className="flex-shrink-0 w-24 text-right">
                   <span className="font-serif text-2xl text-accent">
                     {item.year}
                   </span>
                 </div>
-                <div className="relative pl-8 border-l border-border">
+                <div className="relative pl-10 border-l border-border">
                   <div className="absolute -left-1.5 top-2 w-3 h-3 rounded-full bg-accent" />
                   <h3 className="font-medium text-lg mb-2">{item.title}</h3>
                   <p className="text-muted-foreground">{item.description}</p>
@@ -273,28 +273,13 @@ export default function SobrePage() {
       </section>
 
       {/* Region */}
-      <section className="py-20 md:py-28 bg-muted">
+      <section className="py-24 md:py-32 bg-muted border-t border-border/60">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="inline-block text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-                Área de Atuação
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl mb-6">
-                Mirassol, São José do Rio Preto e Região
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Atendo projetos residenciais e comerciais em toda a região noroeste 
-                paulista, oferecendo atendimento presencial e acompanhamento 
-                personalizado em cada etapa do projeto.
-              </p>
-            </motion.div>
-          </div>
+          <SectionTitle
+            subtitle="Área de Atuação"
+            title="Mirassol, São José do Rio Preto e Região"
+            description="Atendo projetos residenciais e comerciais em toda a região noroeste paulista, oferecendo atendimento presencial e acompanhamento personalizado em cada etapa do projeto."
+          />
         </div>
       </section>
 

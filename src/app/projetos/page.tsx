@@ -119,7 +119,7 @@ export default function ProjetosPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-36 pb-12 md:pt-44 lg:pt-48 md:pb-16 bg-muted">
+      <section className="pt-56 pb-16 md:pt-64 lg:pt-72 md:pb-20 bg-muted">
         <div className="container-custom">
           <div className="max-w-3xl">
             <motion.span
