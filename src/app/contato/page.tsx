@@ -68,7 +68,7 @@ export default function ContatoPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-56 pb-16 md:pt-64 lg:pt-72 md:pb-20 bg-muted">
+      <section className="pt-32 pb-16 md:pt-40 lg:pt-44 md:pb-20 bg-muted">
         <div className="container-custom">
           <div style={{ maxWidth: '48rem' }}>
             <motion.span

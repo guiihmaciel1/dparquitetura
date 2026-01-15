@@ -87,8 +87,8 @@ export function AboutPreview() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-10 p-5 bg-muted border-l-4 border-accent"
             >
-              <p className="mt-2 text-sm text-muted-foreground">Estilo Arquitetônico</p>
-              <p className="mt-2 font-serif text-xl text-accent">Contemporâneo Urbano</p>
+              <p className="text-sm text-muted-foreground">Estilo Arquitetônico</p>
+              <p className="mt-1 font-serif text-xl text-accent">Contemporâneo Urbano</p>
             </motion.div>
 
             {/* Stats */}

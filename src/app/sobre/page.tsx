@@ -60,7 +60,7 @@ export default function SobrePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-60 pb-20 md:pt-72 lg:pt-80 md:pb-24 bg-muted">
+      <section className="pt-32 pb-16 md:pt-40 lg:pt-44 md:pb-20 bg-muted">
         <div className="container-custom">
           <div className="max-w-3xl">
             <motion.span
