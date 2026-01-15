@@ -131,12 +131,35 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-8 mb-28 flex justify-center"
+            className="mt-8 mb-12 flex justify-center"
           >
             <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 backdrop-blur-sm text-white/60 text-xs tracking-[0.2em] uppercase rounded-full border border-white/10">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               Mirassol • São José do Rio Preto • Região
             </span>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          >
+            <Link
+              href="/projetos"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-accent text-primary text-sm tracking-wide hover:bg-accent-dark transition-all duration-300"
+            >
+              Ver Projetos
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              href="/contato"
+              className="group inline-flex items-center gap-2 px-8 py-4 border border-white/20 text-white text-sm tracking-wide hover:bg-white/10 transition-all duration-300"
+            >
+              Iniciar Conversa
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
 
         </div>
