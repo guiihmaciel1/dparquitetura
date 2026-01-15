@@ -1,35 +1,73 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionTitle } from "@/components/ui";
 
-// Dados de exemplo - serão substituídos por depoimentos reais
 const testimonials = [
   {
     id: 1,
     quote:
-      "A Debora entendeu exatamente o que queríamos para nossa casa. O resultado superou todas as expectativas. Cada detalhe foi pensado com carinho e profissionalismo.",
-    author: "Maria e João Silva",
-    project: "Residência Morumbi",
+      "Só temos a agradecer pelo trabalho incrível! O projeto ficou ainda melhor do que imaginávamos. Você conseguiu idealizar tudo que sonhamos! Nos acompanhou e nos deu suporte em todas as etapas da obra desde a escolha da planta, documentação, acompanhamento da obra e design de interiores. Obrigada por toda dedicação e carinho conosco. Com certeza indicaremos o seu trabalho!",
+    author: "Bianca e Flavio",
+    project: "Jd Renascença, Mirassol",
   },
   {
     id: 2,
     quote:
-      "Profissionalismo impecável do início ao fim. A Debora transformou nosso escritório em um espaço que reflete nossa identidade e aumentou a produtividade da equipe.",
-    author: "Carlos Mendes",
-    project: "Escritório Tech Solutions",
+      "Excelente profissional! A arquiteta Débora, alia criatividade, técnica e uma ótima gestão de obra. O resultado final está ficando incrível e o processo está muito mais leve do que eu imaginava. Se você busca qualidade e confiança, ela é a pessoa certa.",
+    author: "Daniele",
+    project: "Residência D&D, Cond. Chácaras Pontos Chic, Jaci",
   },
   {
     id: 3,
     quote:
-      "Reforma completa do nosso apartamento com muito bom gosto e funcionalidade. A Debora tem um olhar único para aproveitar cada metro quadrado.",
-    author: "Ana Paula Costa",
-    project: "Apartamento Itaim",
+      "Excelente profissional. A arquiteta Débora é muito assertiva, técnica e entregou o projeto exatamente no prazo. O resultado ficou funcional e de muito bom gosto. Recomendo.",
+    author: "Vanderlei",
+    project: "Jaci, SP",
+  },
+  {
+    id: 4,
+    quote:
+      "Passando para dar um feedback do projeto da sala! Ficou exatamente como eu queria — na verdade, muito melhor do que eu imaginava. Desde o início, minha ideia era conseguir visualizar tudo com clareza e transformar as minhas ideias em imagens, e você conseguiu captar isso perfeitamente. O projeto superou minhas expectativas: cada detalhe fez sentido, a disposição dos elementos ficou funcional e ao mesmo tempo acolhedora, e o resultado final ficou totalmente alinhado com o que eu sonhava para esse espaço. Dá para ver o cuidado, o olhar técnico e a sensibilidade em cada escolha. Estou simplesmente encantada com o resultado e muito feliz por ter confiado esse projeto a você. Obrigada por mais uma vez superar minhas expectativas!",
+    author: "Caroline",
+    project: "Clínica Estética, Mirassol",
+  },
+  {
+    id: 5,
+    quote:
+      "Gostaríamos de deixar nosso imenso agradecimento à Débora pelo trabalho impecável! Como casal, buscávamos alguém que entendesse nosso estilo, e ela superou todas as expectativas. Além de ser extremamente atenciosa e captar cada detalhe do que queríamos, a Débora é de uma criatividade sem limites, trazendo soluções que nunca tínhamos imaginado. Tudo isso com uma agilidade incrível na entrega. Recomendamos de olhos fechados!",
+    author: "Munhoz e Julia",
+    project: "Casa em Neves Paulista, SP",
+  },
+  {
+    id: 6,
+    quote:
+      "A melhor decisão que tomei em 2025 sem dúvida foi procurar a Débora para tornar o sonho da minha cozinha profissional em realidade! Era um sonho que parecia muito distante e longe de se tornar realidade, mas a excelência e o profissionalismo da Débora tornou tudo real e palpável! Em 2026, minha cozinha estará pronta e mais linda do que eu poderia imaginar graças ao trabalho impecável da Débora! Sou muito grata a ela por isso e me emocionei no escritório dela quando recebi o projeto pronto em mãos e percebi que não se tratava mais apenas um sonho distante, mas sim uma realidade próxima, se concretizando naquele momento! Foi muito emocionante! Sem contar o carinho da Débora no atendimento, desde o primeiro contato pelo whats, a visita no ambiente que seria transformado, todas as dúvidas que ela tirou, todos os conselhos que ela nos deu com muita propriedade pensando no melhor para o futuro do meu empreendimento. Durante a obra, a Débora se fez presente e esteve sempre disponível para tirar dúvidas, aconselhar e apoiar em todas as decisões. O capricho para entregar o projeto, tudo me encantou e me fez admirar muito a profissão e o dom dela de transformar sonhos em realidade!",
+    author: "Doçura no Potinho",
+    project: "Cozinha Profissional",
   },
 ];
 
 export function TestimonialsSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const testimonialsPerPage = 3;
+  const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  const currentTestimonials = testimonials.slice(
+    currentIndex * testimonialsPerPage,
+    (currentIndex + 1) * testimonialsPerPage
+  );
+
   return (
     <section className="py-24 md:py-32 bg-muted overflow-hidden">
       <div className="container-custom">
@@ -41,41 +79,90 @@ export function TestimonialsSection() {
         />
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          {testimonials.map((testimonial, index) => (
+        <div className="relative mt-16">
+          <AnimatePresence mode="wait">
             <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="relative group h-full"
+              key={currentIndex}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
             >
-              <div className="p-8 md:p-10 bg-background border border-border h-full hover:border-accent/50 hover:shadow-lg transition-all duration-300 flex flex-col">
-                {/* Quote Icon */}
-                <Quote
-                  size={40}
-                  className="text-accent/60 mb-6"
-                  strokeWidth={1}
-                />
+              {currentTestimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="relative group h-full"
+                >
+                  <div className="p-8 md:p-10 bg-background border border-border h-full hover:border-accent/50 hover:shadow-lg transition-all duration-300 flex flex-col min-h-[400px]">
+                    {/* Quote Icon */}
+                    <Quote
+                      size={36}
+                      className="text-accent/60 mb-4 flex-shrink-0"
+                      strokeWidth={1}
+                    />
 
-                {/* Quote Text */}
-                <blockquote className="text-foreground leading-relaxed mb-8 text-[15px] flex-1">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </blockquote>
+                    {/* Quote Text */}
+                    <blockquote className="text-foreground leading-relaxed mb-6 text-sm flex-1 overflow-hidden">
+                      <span className="line-clamp-[12]">
+                        &ldquo;{testimonial.quote}&rdquo;
+                      </span>
+                    </blockquote>
 
-                {/* Author */}
-                <div className="border-t border-border pt-6 mt-auto">
-                  <p className="font-medium text-foreground">
-                    {testimonial.author}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.project}
-                  </p>
-                </div>
-              </div>
+                    {/* Author */}
+                    <div className="border-t border-border pt-4 mt-auto">
+                      <p className="font-medium text-foreground">
+                        {testimonial.author}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.project}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
+          </AnimatePresence>
+
+          {/* Navigation */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 mt-12">
+              <button
+                onClick={prevSlide}
+                className="w-12 h-12 border border-border flex items-center justify-center hover:border-accent hover:text-accent transition-colors"
+                aria-label="Depoimentos anteriores"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              
+              {/* Dots */}
+              <div className="flex gap-2">
+                {Array.from({ length: totalPages }).map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      idx === currentIndex
+                        ? "bg-accent w-6"
+                        : "bg-border hover:bg-accent/50"
+                    }`}
+                    aria-label={`Ir para página ${idx + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={nextSlide}
+                className="w-12 h-12 border border-border flex items-center justify-center hover:border-accent hover:text-accent transition-colors"
+                aria-label="Próximos depoimentos"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
