@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -18,6 +18,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
   
   // Na home, antes de scrollar, usa texto claro (fundo escuro da Hero)
   const isHome = pathname === "/";
@@ -33,6 +34,15 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (isHome) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      router.push("/");
+    }
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -47,7 +57,7 @@ export function Header() {
         }`}
       >
         {/* Logo */}
-        <Link href="/" className="group">
+        <a href="/" onClick={handleHomeClick} className="group cursor-pointer">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -65,7 +75,7 @@ export function Header() {
               Arquitetura
             </span>
           </motion.div>
-        </Link>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className={`hidden md:flex items-center gap-8 ${useLightText ? "text-white" : ""}`}>
@@ -76,17 +86,32 @@ export function Header() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Link
-                href={link.href}
-                className={`relative text-sm tracking-wide transition-colors duration-300 group ${
-                  useLightText 
-                    ? "text-white hover:text-accent drop-shadow-sm" 
-                    : "text-foreground/80 hover:text-foreground"
-                }`}
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
-              </Link>
+              {link.href === "/" ? (
+                <a
+                  href="/"
+                  onClick={handleHomeClick}
+                  className={`relative text-sm tracking-wide transition-colors duration-300 group cursor-pointer ${
+                    useLightText 
+                      ? "text-white hover:text-accent drop-shadow-sm" 
+                      : "text-foreground/80 hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
+                </a>
+              ) : (
+                <Link
+                  href={link.href}
+                  className={`relative text-sm tracking-wide transition-colors duration-300 group ${
+                    useLightText 
+                      ? "text-white hover:text-accent drop-shadow-sm" 
+                      : "text-foreground/80 hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
+                </Link>
+              )}
             </motion.div>
           ))}
         </nav>
@@ -121,13 +146,26 @@ export function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
                 >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-2 text-lg text-foreground/80 hover:text-accent transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.href === "/" ? (
+                    <a
+                      href="/"
+                      onClick={(e) => {
+                        setIsMobileMenuOpen(false);
+                        handleHomeClick(e);
+                      }}
+                      className="block py-2 text-lg text-foreground/80 hover:text-accent transition-colors cursor-pointer"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block py-2 text-lg text-foreground/80 hover:text-accent transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </nav>

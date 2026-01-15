@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Instagram, MapPin, Phone, Award } from "lucide-react";
 
 const footerLinks = {
@@ -23,6 +26,14 @@ const socialLinks = [
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -31,14 +42,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
+            <a href="/" onClick={handleHomeClick} className="inline-block mb-6 cursor-pointer">
               <span className="font-serif text-2xl font-medium">
                 Debora Pieri
               </span>
               <span className="block text-[10px] tracking-[0.3em] uppercase text-primary-foreground/60">
                 Arquitetura
               </span>
-            </Link>
+            </a>
             <p className="text-sm text-primary-foreground/70 leading-relaxed mb-4">
               Arquitetura que Conecta Forma, Função e Identidade. 
               Atendimento humanizado com sensibilidade e dedicação.
@@ -73,12 +84,22 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.navegacao.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
-                  >
-                    {link.label}
-                  </Link>
+                  {link.href === "/" ? (
+                    <a
+                      href="/"
+                      onClick={handleHomeClick}
+                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300 cursor-pointer"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
