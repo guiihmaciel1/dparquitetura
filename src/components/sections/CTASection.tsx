@@ -79,7 +79,7 @@ export function CTASection() {
               />
             </Link>
             <a
-              href="https://wa.me/5517999999999?text=Olá! Gostaria de saber mais sobre os serviços de arquitetura."
+              href="https://wa.me/5517991883103?text=Olá! Gostaria de saber mais sobre os serviços de arquitetura."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-10 py-4 border-2 border-accent text-accent text-sm tracking-wide hover:bg-accent hover:text-primary font-medium transition-all duration-300"

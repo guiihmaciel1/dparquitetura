@@ -3,6 +3,7 @@ import { Outfit, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -64,6 +65,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

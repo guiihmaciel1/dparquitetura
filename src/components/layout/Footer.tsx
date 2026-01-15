@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Instagram, Mail, MapPin, Phone, Award } from "lucide-react";
+import { Instagram, MapPin, Phone, Award } from "lucide-react";
 
 const footerLinks = {
   navegacao: [
@@ -18,7 +18,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { href: "https://instagram.com/deborapieriaarquitetura", icon: Instagram, label: "Instagram" },
+  { href: "https://instagram.com/deborapieriarquitetura", icon: Instagram, label: "Instagram" },
 ];
 
 export function Footer() {
@@ -111,20 +111,13 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="mailto:contato@deborapieri.arq.br"
-                  className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
-                >
-                  <Mail size={18} className="mt-0.5 flex-shrink-0" />
-                  <span>contato@deborapieri.arq.br</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+5517999999999"
+                  href="https://wa.me/5517991883103"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
                 >
                   <Phone size={18} className="mt-0.5 flex-shrink-0" />
-                  <span>(17) 99999-9999</span>
+                  <span>(17) 99188-3103</span>
                 </a>
               </li>
               <li>

@@ -3,27 +3,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Mail,
   Phone,
   MapPin,
   Instagram,
   Send,
-  CheckCircle,
   Award,
 } from "lucide-react";
 
+const WHATSAPP_NUMBER = "5517991883103";
+
 const contactInfo = [
   {
-    icon: Mail,
-    label: "Email",
-    value: "contato@deborapieri.arq.br",
-    href: "mailto:contato@deborapieri.arq.br",
-  },
-  {
     icon: Phone,
-    label: "Telefone",
-    value: "(17) 99999-9999",
-    href: "tel:+5517999999999",
+    label: "WhatsApp",
+    value: "(17) 99188-3103",
+    href: `https://wa.me/${WHATSAPP_NUMBER}`,
   },
   {
     icon: MapPin,
@@ -34,19 +28,26 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com/deborapieriaarquitetura", label: "Instagram" },
+  { icon: Instagram, href: "https://instagram.com/deborapieriarquitetura", label: "Instagram" },
 ];
+
+const subjectLabels: Record<string, string> = {
+  arquitetonico: "Projeto Arquitetônico",
+  interiores: "Design de Interiores",
+  iluminacao: "Projeto de Iluminação",
+  regularizacao: "Regularização de Imóveis",
+  comercial: "Projeto Comercial",
+  consultoria: "Assessoria em Compras",
+  outro: "Outro",
+};
 
 export default function ContatoPage() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     subject: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -54,15 +55,20 @@ export default function ContatoPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    // Gerar texto para WhatsApp
+    const subjectText = subjectLabels[formData.subject] || formData.subject;
+    const whatsappMessage = `Olá! Meu nome é *${formData.name}*${formData.phone ? ` e meu telefone é ${formData.phone}` : ""}.
 
-    // Simular envio - substituir por integração real
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+*Assunto:* ${subjectText}
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+*Mensagem:*
+${formData.message}`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, "_blank");
   };
 
   return (
@@ -224,11 +230,11 @@ export default function ContatoPage() {
                   className="text-muted-foreground"
                   style={{ fontSize: '0.875rem', marginBottom: '1.5rem' }}
                 >
-                  Atendo também pelo WhatsApp para maior agilidade. 
+                  Atendo pelo WhatsApp para maior agilidade. 
                   Vamos conversar sobre seu projeto!
                 </p>
                 <a
-                  href="https://wa.me/5517999999999?text=Olá! Gostaria de saber mais sobre os serviços de arquitetura."
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Olá! Gostaria de saber mais sobre os serviços de arquitetura.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:bg-[#128C7E] transition-colors"
@@ -257,194 +263,127 @@ export default function ContatoPage() {
             >
               <h2 
                 className="font-serif"
-                style={{ fontSize: 'clamp(1.5rem, 3vw, 1.875rem)', marginBottom: '2rem' }}
+                style={{ fontSize: 'clamp(1.5rem, 3vw, 1.875rem)', marginBottom: '0.75rem' }}
               >
                 Envie uma Mensagem
               </h2>
+              <p 
+                className="text-muted-foreground"
+                style={{ fontSize: '0.875rem', marginBottom: '2rem' }}
+              >
+                Preencha o formulário e será direcionado ao WhatsApp
+              </p>
 
-              {isSubmitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="bg-muted"
-                  style={{ padding: '3rem', textAlign: 'center' }}
-                >
-                  <CheckCircle
-                    size={48}
-                    className="text-accent"
-                    style={{ margin: '0 auto 1.5rem' }}
-                  />
-                  <h3 
-                    className="font-serif"
-                    style={{ fontSize: '1.5rem', marginBottom: '1rem' }}
-                  >
-                    Mensagem Enviada!
-                  </h3>
-                  <p 
-                    className="text-muted-foreground"
-                    style={{ marginBottom: '1.5rem' }}
-                  >
-                    Obrigada pelo contato! Retornarei em breve para conversarmos 
-                    sobre seu projeto.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormData({
-                        name: "",
-                        email: "",
-                        phone: "",
-                        subject: "",
-                        message: "",
-                      });
-                    }}
-                    className="text-accent hover:underline"
-                    style={{ fontSize: '0.875rem' }}
-                  >
-                    Enviar nova mensagem
-                  </button>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.5rem' }} className="md:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="text-muted-foreground"
-                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
-                      >
-                        Nome *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
-                        style={{ width: '100%', padding: '0.75rem 1rem' }}
-                        placeholder="Seu nome"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="text-muted-foreground"
-                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
-                      >
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
-                        style={{ width: '100%', padding: '0.75rem 1rem' }}
-                        placeholder="seu@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.5rem' }} className="md:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="phone"
-                        className="text-muted-foreground"
-                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
-                      >
-                        Telefone
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
-                        style={{ width: '100%', padding: '0.75rem 1rem' }}
-                        placeholder="(17) 99999-9999"
-                      />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="subject"
-                        className="text-muted-foreground"
-                        style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
-                      >
-                        Assunto *
-                      </label>
-                      <select
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                        className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
-                        style={{ width: '100%', padding: '0.75rem 1rem', appearance: 'none' }}
-                      >
-                        <option value="">Selecione...</option>
-                        <option value="arquitetonico">Projeto Arquitetônico</option>
-                        <option value="interiores">Design de Interiores</option>
-                        <option value="iluminacao">Projeto de Iluminação</option>
-                        <option value="regularizacao">Regularização de Imóveis</option>
-                        <option value="comercial">Projeto Comercial</option>
-                        <option value="consultoria">Assessoria em Compras</option>
-                        <option value="outro">Outro</option>
-                      </select>
-                    </div>
-                  </div>
-
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gap: '1.5rem' }} className="md:grid-cols-2">
                   <div>
                     <label
-                      htmlFor="message"
+                      htmlFor="name"
                       className="text-muted-foreground"
                       style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
                     >
-                      Mensagem *
+                      Nome *
                     </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
                       required
-                      rows={6}
                       className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
-                      style={{ width: '100%', padding: '0.75rem 1rem', resize: 'none' }}
-                      placeholder="Conte-me sobre seu projeto, suas ideias e o que você imagina para o espaço..."
+                      style={{ width: '100%', padding: '0.75rem 1rem' }}
+                      placeholder="Seu nome"
                     />
                   </div>
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="text-muted-foreground"
+                      style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
+                    >
+                      Telefone
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                      style={{ width: '100%', padding: '0.75rem 1rem' }}
+                      placeholder="(17) 99999-9999"
+                    />
+                  </div>
+                </div>
 
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-accent text-primary hover:bg-accent-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{ 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center', 
-                      gap: '0.5rem', 
-                      padding: '1rem 2rem', 
-                      fontSize: '0.875rem', 
-                      letterSpacing: '0.025em',
-                      width: 'fit-content'
-                    }}
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="text-muted-foreground"
+                    style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
                   >
-                    {isSubmitting ? (
-                      "Enviando..."
-                    ) : (
-                      <>
-                        Enviar Mensagem
-                        <Send size={16} />
-                      </>
-                    )}
-                  </button>
-                </form>
-              )}
+                    Assunto *
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                    style={{ width: '100%', padding: '0.75rem 1rem', appearance: 'none' }}
+                  >
+                    <option value="">Selecione...</option>
+                    <option value="arquitetonico">Projeto Arquitetônico</option>
+                    <option value="interiores">Design de Interiores</option>
+                    <option value="iluminacao">Projeto de Iluminação</option>
+                    <option value="regularizacao">Regularização de Imóveis</option>
+                    <option value="comercial">Projeto Comercial</option>
+                    <option value="consultoria">Assessoria em Compras</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="text-muted-foreground"
+                    style={{ display: 'block', fontSize: '0.75rem', letterSpacing: '0.05em', textTransform: 'uppercase', marginBottom: '0.5rem' }}
+                  >
+                    Mensagem *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="bg-muted border border-border focus:border-accent focus:outline-none transition-colors"
+                    style={{ width: '100%', padding: '0.75rem 1rem', resize: 'none' }}
+                    placeholder="Conte-me sobre seu projeto, suas ideias e o que você imagina para o espaço..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="bg-[#25D366] text-white hover:bg-[#128C7E] transition-colors"
+                  style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    gap: '0.5rem', 
+                    padding: '1rem 2rem', 
+                    fontSize: '0.875rem', 
+                    letterSpacing: '0.025em',
+                    width: 'fit-content'
+                  }}
+                >
+                  Enviar via WhatsApp
+                  <Send size={16} />
+                </button>
+              </form>
             </motion.div>
           </div>
         </div>
