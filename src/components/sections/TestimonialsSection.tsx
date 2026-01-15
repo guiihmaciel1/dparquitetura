@@ -6,6 +6,7 @@ import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionTitle } from "@/components/ui";
 
 const testimonials = [
+  // Depoimentos do WhatsApp
   {
     id: 1,
     quote:
@@ -30,7 +31,7 @@ const testimonials = [
   {
     id: 4,
     quote:
-      "Passando para dar um feedback do projeto da sala! Ficou exatamente como eu queria — na verdade, muito melhor do que eu imaginava. Desde o início, minha ideia era conseguir visualizar tudo com clareza e transformar as minhas ideias em imagens, e você conseguiu captar isso perfeitamente. O projeto superou minhas expectativas: cada detalhe fez sentido, a disposição dos elementos ficou funcional e ao mesmo tempo acolhedora, e o resultado final ficou totalmente alinhado com o que eu sonhava para esse espaço. Dá para ver o cuidado, o olhar técnico e a sensibilidade em cada escolha. Estou simplesmente encantada com o resultado e muito feliz por ter confiado esse projeto a você. Obrigada por mais uma vez superar minhas expectativas!",
+      "Passando para dar um feedback do projeto da sala! Ficou exatamente como eu queria — na verdade, muito melhor do que eu imaginava. Desde o início, minha ideia era conseguir visualizar tudo com clareza e transformar as minhas ideias em imagens, e você conseguiu captar isso perfeitamente. O projeto superou minhas expectativas: cada detalhe fez sentido, a disposição dos elementos ficou funcional e ao mesmo tempo acolhedora, e o resultado final ficou totalmente alinhado com o que eu sonhava para esse espaço.",
     author: "Caroline",
     project: "Clínica Estética, Mirassol",
   },
@@ -44,9 +45,87 @@ const testimonials = [
   {
     id: 6,
     quote:
-      "A melhor decisão que tomei em 2025 sem dúvida foi procurar a Débora para tornar o sonho da minha cozinha profissional em realidade! Era um sonho que parecia muito distante e longe de se tornar realidade, mas a excelência e o profissionalismo da Débora tornou tudo real e palpável! Em 2026, minha cozinha estará pronta e mais linda do que eu poderia imaginar graças ao trabalho impecável da Débora! Sou muito grata a ela por isso e me emocionei no escritório dela quando recebi o projeto pronto em mãos e percebi que não se tratava mais apenas um sonho distante, mas sim uma realidade próxima, se concretizando naquele momento! Foi muito emocionante! Sem contar o carinho da Débora no atendimento, desde o primeiro contato pelo whats, a visita no ambiente que seria transformado, todas as dúvidas que ela tirou, todos os conselhos que ela nos deu com muita propriedade pensando no melhor para o futuro do meu empreendimento. Durante a obra, a Débora se fez presente e esteve sempre disponível para tirar dúvidas, aconselhar e apoiar em todas as decisões. O capricho para entregar o projeto, tudo me encantou e me fez admirar muito a profissão e o dom dela de transformar sonhos em realidade!",
+      "A melhor decisão que tomei em 2025 sem dúvida foi procurar a Débora para tornar o sonho da minha cozinha profissional em realidade! Era um sonho que parecia muito distante, mas a excelência e o profissionalismo da Débora tornou tudo real e palpável! Me emocionei no escritório dela quando recebi o projeto pronto em mãos. O capricho para entregar o projeto, tudo me encantou e me fez admirar muito a profissão e o dom dela de transformar sonhos em realidade!",
     author: "Doçura no Potinho",
     project: "Cozinha Profissional",
+  },
+  // Depoimentos do Google
+  {
+    id: 7,
+    quote:
+      "A Débora fez um trabalho excepcional no projeto da minha casa! Desde o início, demonstrou profissionalismo, criatividade e atenção aos detalhes. O resultado final ficou ainda melhor do que eu imaginava! Recomendo!",
+    author: "Fernando Roberto de Paula",
+    project: "Projeto Residencial",
+  },
+  {
+    id: 8,
+    quote:
+      "Atenciosa com o cliente e disposta a realizar o sonho e desejo de cada um. Super recomendo!",
+    author: "Daniela Oliveira",
+    project: "Google Reviews ⭐⭐⭐⭐⭐",
+  },
+  {
+    id: 9,
+    quote:
+      "A melhor arquiteta de Mirassol e região. Projetos maravilhosos, design de interiores lindos e atuais. Fez o quarto da minha filha, transição para adolescente, com todo cuidado e carinho e ficou simplesmente perfeito. Podem contratar com a certeza que receberão exatamente o que deseja.",
+    author: "Jaqueline Dos Anjos",
+    project: "Design de Interiores",
+  },
+  {
+    id: 10,
+    quote:
+      "Ótima experiência, ótimo preço, e muito atenciosa! Fizemos nossa casa pela caixa, e dentro dos nossos recursos disponíveis conseguimos chegar em um projeto do nosso agrado. Débora sempre cheia de ideias e formas práticas para organizar tudo!",
+    author: "Nathally Mayra de Oliveira Ruiz",
+    project: "Projeto Residencial",
+  },
+  {
+    id: 11,
+    quote:
+      "Sem dúvida alguma a melhor. Débora é atenciosa, gentil, exemplar e profissional. Seus projetos lindos e incríveis, com certeza a recomendo e a contratarei novamente!",
+    author: "Ana Carla Ferreira",
+    project: "Google Reviews ⭐⭐⭐⭐⭐",
+  },
+  {
+    id: 12,
+    quote:
+      "Uma profissional maravilhosa, cumpre com o que promete e entrega muito mais!",
+    author: "Mayara Rocha",
+    project: "Google Reviews ⭐⭐⭐⭐⭐",
+  },
+  {
+    id: 13,
+    quote:
+      "Profissional excelente! Comprometida em trazer o melhor para seu cliente.",
+    author: "Paula Viscardi",
+    project: "Google Reviews ⭐⭐⭐⭐⭐",
+  },
+  {
+    id: 14,
+    quote:
+      "Excelente profissional, sabe atender todas as exigências do cliente, projetos bem elaborados.",
+    author: "Fernando Henrique",
+    project: "Google Reviews ⭐⭐⭐⭐⭐",
+  },
+  {
+    id: 15,
+    quote:
+      "Ótima profissional! Super indico.",
+    author: "Juliana Satie Zocal Tanoue",
+    project: "Google Reviews ⭐⭐⭐⭐⭐",
+  },
+  {
+    id: 16,
+    quote:
+      "Uma arquiteta maravilhosa! Humana e uma excelente profissional!!!! Amo o trabalho dela! Perfeito!",
+    author: "Vanessa de Oliveira",
+    project: "Google Reviews ⭐⭐⭐⭐⭐",
+  },
+  {
+    id: 17,
+    quote:
+      "Excelente profissional que transmiti amor através dos seus trabalhos.",
+    author: "Joseane Paula",
+    project: "Google Reviews ⭐⭐⭐⭐⭐",
   },
 ];
 
@@ -75,7 +154,7 @@ export function TestimonialsSection() {
         <SectionTitle
           subtitle="Depoimentos"
           title="O Que Dizem Nossos Clientes"
-          description="A satisfação dos nossos clientes é o nosso maior reconhecimento."
+          description="Nota 5.0 no Google com 16 avaliações. A satisfação dos nossos clientes é o nosso maior reconhecimento."
         />
 
         {/* Testimonials Grid */}
