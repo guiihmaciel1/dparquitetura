@@ -4,6 +4,7 @@ import {
   ProjectsPreview,
   ServicesPreview,
   TestimonialsSection,
+  InstagramFeed,
   CTASection,
 } from "@/components/sections";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <ProjectsPreview />
       <ServicesPreview />
       <TestimonialsSection />
+      <InstagramFeed />
       <CTASection />
     </>
   );

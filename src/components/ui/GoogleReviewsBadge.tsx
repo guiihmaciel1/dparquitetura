@@ -49,7 +49,7 @@ export function GoogleReviewsBadge({ variant = "dark", className = "" }: GoogleR
           </div>
         </div>
         <span className={`text-xs ${isDark ? "text-white/60" : "text-muted-foreground"}`}>
-          16 avaliações no Google
+          + 150 avaliações no Google
         </span>
       </div>
     </motion.a>
