@@ -43,7 +43,7 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute -bottom-6 -left-6 md:left-6 bg-accent text-primary p-5 shadow-lg"
+              className="absolute bottom-4 left-4 bg-accent text-primary p-5 shadow-lg"
             >
               <Award size={20} className="mb-1" />
               <span className="block text-xs tracking-wider uppercase">CAU</span>
@@ -85,10 +85,10 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-8 p-5 bg-muted border-l-4 border-accent"
+              className="mt-10 p-5 bg-muted border-l-4 border-accent"
             >
-              <p className="text-sm text-muted-foreground">Estilo Arquitetônico</p>
-              <p className="font-serif text-xl text-accent">Contemporâneo Urbano</p>
+              <p className="mt-2 text-sm text-muted-foreground">Estilo Arquitetônico</p>
+              <p className="mt-2 font-serif text-xl text-accent">Contemporâneo Urbano</p>
             </motion.div>
 
             {/* Stats */}
@@ -97,7 +97,7 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="grid grid-cols-3 gap-6 mt-10 pt-10 border-t border-border"
+              className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-border"
             >
               {stats.map((stat, index) => (
                 <div key={index} className="text-center lg:text-left">
@@ -117,7 +117,7 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-10"
+              className="mt-12"
             >
               <Link
                 href="/sobre"
