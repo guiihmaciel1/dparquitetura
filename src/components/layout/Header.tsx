@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -16,6 +17,11 @@ const navLinks = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Na home, antes de scrollar, usa texto claro (fundo escuro da Hero)
+  const isHome = pathname === "/";
+  const useLightText = isHome && !isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +40,11 @@ export function Header() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="container-custom flex items-center justify-between">
+      <div
+        className={`container-custom flex items-center justify-between ${
+          useLightText ? "text-white" : ""
+        }`}
+      >
         {/* Logo */}
         <Link href="/" className="group">
           <motion.div
@@ -43,17 +53,21 @@ export function Header() {
             transition={{ duration: 0.6 }}
             className="flex flex-col"
           >
-            <span className="font-serif text-2xl md:text-3xl font-medium tracking-tight text-foreground group-hover:text-accent transition-colors duration-300">
+            <span className={`font-serif text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 group-hover:text-accent ${
+              useLightText ? "text-white drop-shadow-sm" : "text-foreground"
+            }`}>
               Debora Pieri
             </span>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground">
+            <span className={`text-[10px] md:text-xs tracking-[0.3em] uppercase transition-colors duration-300 ${
+              useLightText ? "text-white/70 drop-shadow-sm" : "text-muted-foreground"
+            }`}>
               Arquitetura
             </span>
           </motion.div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className={`hidden md:flex items-center gap-8 ${useLightText ? "text-white" : ""}`}>
           {navLinks.map((link, index) => (
             <motion.div
               key={link.href}
@@ -63,7 +77,11 @@ export function Header() {
             >
               <Link
                 href={link.href}
-                className="relative text-sm tracking-wide text-foreground/80 hover:text-foreground transition-colors duration-300 group"
+                className={`relative text-sm tracking-wide transition-colors duration-300 group ${
+                  useLightText 
+                    ? "text-white hover:text-accent drop-shadow-sm" 
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
@@ -75,7 +93,9 @@ export function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-foreground"
+          className={`md:hidden p-2 transition-colors duration-300 ${
+            useLightText ? "text-white" : "text-foreground"
+          }`}
           aria-label="Menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

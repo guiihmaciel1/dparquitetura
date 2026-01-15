@@ -31,7 +31,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-28 md:py-36 bg-muted overflow-hidden">
+    <section className="py-24 md:py-32 bg-muted overflow-hidden">
       <div className="container-custom">
         {/* Header */}
         <SectionTitle
@@ -41,7 +41,7 @@ export function TestimonialsSection() {
         />
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mt-16 md:mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -49,23 +49,23 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="relative group"
+              className="relative group h-full"
             >
-              <div className="p-8 md:p-10 bg-background border border-border h-full hover:border-accent/50 hover:shadow-lg transition-all duration-300">
+              <div className="p-8 md:p-10 bg-background border border-border h-full hover:border-accent/50 hover:shadow-lg transition-all duration-300 flex flex-col">
                 {/* Quote Icon */}
                 <Quote
                   size={40}
-                  className="text-accent/40 mb-6"
+                  className="text-accent/60 mb-6"
                   strokeWidth={1}
                 />
 
                 {/* Quote Text */}
-                <blockquote className="text-foreground leading-relaxed mb-8 text-[15px]">
+                <blockquote className="text-foreground leading-relaxed mb-8 text-[15px] flex-1">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 
                 {/* Author */}
-                <div className="border-t border-border pt-6">
+                <div className="border-t border-border pt-6 mt-auto">
                   <p className="font-medium text-foreground">
                     {testimonial.author}
                   </p>

@@ -60,7 +60,7 @@ export default function SobrePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-muted">
+      <section className="pt-36 pb-16 md:pt-44 lg:pt-48 md:pb-20 bg-muted">
         <div className="container-custom">
           <div className="max-w-3xl">
             <motion.span
@@ -249,7 +249,7 @@ export default function SobrePage() {
           <div className="max-w-3xl mx-auto mt-16">
             {timeline.map((item, index) => (
               <motion.div
-                key={item.year}
+                key={`${item.year}-${index}`}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}

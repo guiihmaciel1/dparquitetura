@@ -68,10 +68,7 @@ export default function ContatoPage() {
   return (
     <>
       {/* Hero Section */}
-      <section 
-        className="bg-muted"
-        style={{ paddingTop: '10rem', paddingBottom: '4rem' }}
-      >
+      <section className="pt-36 pb-16 md:pt-44 lg:pt-48 md:pb-20 bg-muted">
         <div className="container-custom">
           <div style={{ maxWidth: '48rem' }}>
             <motion.span

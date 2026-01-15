@@ -57,10 +57,11 @@ export function ServicesPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="h-full"
             >
               <Link
                 href={service.href}
-                className="group block p-8 md:p-10 border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/5 transition-all duration-500"
+                className="group block p-8 md:p-10 border border-primary-foreground/10 hover:border-accent/50 hover:bg-primary-foreground/5 transition-all duration-500 h-full"
               >
                 <div className="flex items-start gap-6">
                   {/* Icon */}
@@ -69,11 +70,11 @@ export function ServicesPreview() {
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <h3 className="font-serif text-xl md:text-2xl mb-3 group-hover:text-accent transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <p className="text-primary-foreground/60 text-sm leading-relaxed mb-4">
+                    <p className="text-primary-foreground/60 text-sm leading-relaxed mb-4 min-h-[3rem]">
                       {service.description}
                     </p>
                     <span className="inline-flex items-center gap-2 text-xs tracking-wider uppercase text-primary-foreground/40 group-hover:text-accent transition-colors duration-300">

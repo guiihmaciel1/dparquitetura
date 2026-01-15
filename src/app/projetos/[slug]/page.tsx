@@ -100,7 +100,7 @@ export default function ProjetoPage({ params }: PageProps) {
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-muted">
+      <section className="pt-36 pb-16 md:pt-44 lg:pt-48 md:pb-20 bg-muted">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

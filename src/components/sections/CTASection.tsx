@@ -6,7 +6,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="py-28 md:py-40 bg-background relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-background relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div
