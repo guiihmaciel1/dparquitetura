@@ -28,10 +28,10 @@ export function AboutPreview() {
             {/* Main Image */}
             <div className="relative aspect-[4/5] overflow-hidden bg-muted">
               <Image
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop"
+                src="/debora.jpeg"
                 alt="Debora Pieri - Arquiteta"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />

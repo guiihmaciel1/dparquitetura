@@ -107,10 +107,10 @@ export default function SobrePage() {
             >
               <div className="aspect-[3/4] bg-muted relative overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=688&auto=format&fit=crop"
+                  src="/debora.jpeg"
                   alt="Debora Pieri - Arquiteta"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/30 -z-10" />
