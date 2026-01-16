@@ -154,7 +154,7 @@ export function TestimonialsSection() {
         <SectionTitle
           subtitle="Depoimentos"
           title="O Que Dizem Nossos Clientes"
-          description="Nota 5.0 no Google com 16 avaliações. A satisfação dos nossos clientes é o nosso maior reconhecimento."
+          description="Nota 5.0 no Google. A satisfação dos nossos clientes é o nosso maior reconhecimento."
         />
 
         {/* Testimonials Grid */}
