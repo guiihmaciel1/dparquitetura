@@ -7,7 +7,7 @@ import { SectionTitle } from "@/components/ui";
 import Image from "next/image";
 
 const stats = [
-  { number: "8+", label: "Anos de Experiência" },
+  { number: "10+", label: "Anos de Experiência" },
   { number: "2016", label: "Formação UNIRP" },
   { number: "100%", label: "Dedicação" },
 ];
