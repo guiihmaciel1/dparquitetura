@@ -47,7 +47,7 @@ export default function SobrePage() {
     },
     {
       year: "2018",
-      title: "Debora Pieri Arquitetura",
+      title: "Débora Pieri Arquitetura",
       description: "Fundação do escritório próprio em Mirassol",
     },
     {
@@ -77,7 +77,7 @@ export default function SobrePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-6"
             >
-              Debora Pieri
+              Débora Pieri
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export default function SobrePage() {
               <div className="aspect-[3/4] bg-muted relative overflow-hidden">
                 <Image
                   src="/debora.jpeg"
-                  alt="Debora Pieri - Arquiteta"
+                  alt="Débora Pieri - Arquiteta"
                   fill
                   className="object-cover object-center"
                 />

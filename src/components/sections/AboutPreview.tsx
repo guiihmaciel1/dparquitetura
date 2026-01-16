@@ -29,7 +29,7 @@ export function AboutPreview() {
             <div className="relative aspect-[4/5] overflow-hidden bg-muted">
               <Image
                 src="/debora.jpeg"
-                alt="Debora Pieri - Arquiteta"
+                alt="Débora Pieri - Arquiteta"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -55,7 +55,7 @@ export function AboutPreview() {
           <div className="pt-8 lg:pt-0">
             <SectionTitle
               subtitle="Sobre"
-              title="Debora Pieri"
+              title="Débora Pieri"
               align="left"
             />
             

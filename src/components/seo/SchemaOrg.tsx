@@ -5,8 +5,8 @@ export function SchemaOrg() {
       {
         "@type": "LocalBusiness",
         "@id": "https://deborapieriarquitetura.com.br/#organization",
-        name: "Debora Pieri Arquitetura",
-        alternateName: "Debora Pieri",
+        name: "Débora Pieri Arquitetura",
+        alternateName: "Débora Pieri",
         description:
           "Escritório de arquitetura em Mirassol e São José do Rio Preto. Projetos residenciais, comerciais, design de interiores e regularização de imóveis.",
         url: "https://deborapieriarquitetura.com.br",
@@ -61,7 +61,7 @@ export function SchemaOrg() {
       {
         "@type": "Person",
         "@id": "https://deborapieriarquitetura.com.br/#person",
-        name: "Debora Pieri",
+        name: "Débora Pieri",
         jobTitle: "Arquiteta e Urbanista",
         description:
           "Arquiteta formada com registro CAU A135139-7, especializada em projetos residenciais, comerciais e design de interiores.",
@@ -85,9 +85,9 @@ export function SchemaOrg() {
         "@type": "WebSite",
         "@id": "https://deborapieriarquitetura.com.br/#website",
         url: "https://deborapieriarquitetura.com.br",
-        name: "Debora Pieri Arquitetura",
+        name: "Débora Pieri Arquitetura",
         description:
-          "Site oficial de Debora Pieri Arquitetura - Projetos arquitetônicos, design de interiores e regularização de imóveis em Mirassol e região.",
+          "Site oficial de Débora Pieri Arquitetura - Projetos arquitetônicos, design de interiores e regularização de imóveis em Mirassol e região.",
         publisher: {
           "@id": "https://deborapieriarquitetura.com.br/#organization",
         },

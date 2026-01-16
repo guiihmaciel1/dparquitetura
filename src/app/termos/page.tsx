@@ -60,7 +60,7 @@ export default function TermosPage() {
               <div>
                 <h2 className="font-serif text-2xl mb-4">2. Sobre o Site</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Este site é de propriedade de Debora Pieri Arquitetura, profissional registrada 
+                  Este site é de propriedade de Débora Pieri Arquitetura, profissional registrada 
                   no Conselho de Arquitetura e Urbanismo sob o número CAU A135139-7. O site tem 
                   como objetivo apresentar os serviços de arquitetura oferecidos e facilitar o 
                   contato com potenciais clientes.
@@ -90,7 +90,7 @@ export default function TermosPage() {
                 <h2 className="font-serif text-2xl mb-4">4. Propriedade Intelectual</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   Todo o conteúdo deste site, incluindo textos, imagens, logotipos, design e 
-                  projetos apresentados, são de propriedade de Debora Pieri Arquitetura ou 
+                  projetos apresentados, são de propriedade de Débora Pieri Arquitetura ou 
                   licenciados para uso. É proibida a reprodução, distribuição ou uso comercial 
                   sem autorização prévia por escrito.
                 </p>
@@ -99,7 +99,7 @@ export default function TermosPage() {
               <div>
                 <h2 className="font-serif text-2xl mb-4">5. Imagens de Projetos</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  As imagens de projetos apresentadas neste site são de autoria de Debora Pieri 
+                  As imagens de projetos apresentadas neste site são de autoria de Débora Pieri 
                   Arquitetura. Algumas imagens podem ser renders ou visualizações 3D que representam 
                   o projeto finalizado. As fotos de obras concluídas são publicadas com autorização 
                   dos proprietários.
@@ -148,7 +148,7 @@ export default function TermosPage() {
                   Para dúvidas sobre estes termos, entre em contato:
                 </p>
                 <div className="mt-4 p-6 bg-muted">
-                  <p className="text-foreground font-medium">Debora Pieri Arquitetura</p>
+                  <p className="text-foreground font-medium">Débora Pieri Arquitetura</p>
                   <p className="text-muted-foreground text-sm mt-2">
                     Av. Fernando Costa, 2451 - Prédio Comercial Miracenter<br />
                     Centro, Mirassol - SP, CEP 15130-025<br />

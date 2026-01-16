@@ -21,8 +21,8 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: "Debora Pieri Arquitetura | Arquitetura que Conecta Forma, Função e Identidade",
-    template: "%s | Debora Pieri Arquitetura",
+    default: "Débora Pieri Arquitetura | Arquitetura que Conecta Forma, Função e Identidade",
+    template: "%s | Débora Pieri Arquitetura",
   },
   description:
     "Escritório de arquitetura em Mirassol e São José do Rio Preto. Projetos residenciais, comerciais, design de interiores e regularização de imóveis. Arquitetura contemporânea urbana com atendimento humanizado.",
@@ -31,14 +31,14 @@ export const metadata: Metadata = {
     "arquiteta São José do Rio Preto",
     "projetos arquitetônicos",
     "design de interiores",
-    "Debora Pieri",
+    "Débora Pieri",
     "regularização de imóveis",
     "projeto de iluminação",
     "arquitetura contemporânea",
     "CAU A135139-7",
   ],
-  authors: [{ name: "Debora Pieri" }],
-  creator: "Debora Pieri Arquitetura",
+  authors: [{ name: "Débora Pieri" }],
+  creator: "Débora Pieri Arquitetura",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -49,14 +49,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    siteName: "Debora Pieri Arquitetura",
-    title: "Debora Pieri Arquitetura | Arquitetura que Conecta Forma, Função e Identidade",
+    siteName: "Débora Pieri Arquitetura",
+    title: "Débora Pieri Arquitetura | Arquitetura que Conecta Forma, Função e Identidade",
     description:
       "Escritório de arquitetura em Mirassol e região. Projetos residenciais, comerciais e design de interiores com atendimento humanizado.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Debora Pieri Arquitetura",
+    title: "Débora Pieri Arquitetura",
     description: "Escritório de arquitetura em Mirassol e região. Projetos residenciais, comerciais e design de interiores.",
   },
   robots: {

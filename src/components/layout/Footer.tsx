@@ -46,7 +46,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <a href="/" onClick={handleHomeClick} className="inline-block mb-6 cursor-pointer">
               <span className="font-serif text-2xl font-medium">
-                Debora Pieri
+                Débora Pieri
               </span>
               <span className="block text-[10px] tracking-[0.3em] uppercase text-primary-foreground/60">
                 Arquitetura
@@ -168,13 +168,37 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+        {/* Map Section */}
+        <div className="mt-12 pt-12 border-t border-primary-foreground/10">
+          <h4 className="text-sm font-medium tracking-wider uppercase mb-6 text-center">
+            Nossa Localização
+          </h4>
+          <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden">
+            <iframe
+              src="https://maps.google.com/maps?q=Av.+Fernando+Costa,+2451,+Centro,+Mirassol,+SP,+15130-025&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: "grayscale(100%) contrast(1.1)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização Débora Pieri Arquitetura"
+              className="absolute inset-0"
+            />
+            <div className="absolute inset-0 pointer-events-none border border-primary-foreground/10 rounded-lg" />
+          </div>
+          <p className="text-xs text-primary-foreground/50 text-center mt-4">
+            Av. Fernando Costa, 2451 - Prédio Comercial Miracenter, Centro, Mirassol - SP
+          </p>
+        </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-primary-foreground/50">
-            © {currentYear} Debora Pieri Arquitetura. Todos os direitos
+            © {currentYear} Débora Pieri Arquitetura. Todos os direitos
             reservados.
           </p>
           <div className="flex gap-6">

@@ -67,7 +67,7 @@ export function Header() {
             <span className={`font-serif text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 group-hover:text-accent ${
               useLightText ? "text-white drop-shadow-sm" : "text-foreground"
             }`}>
-              Debora Pieri
+              Débora Pieri
             </span>
             <span className={`text-[10px] md:text-xs tracking-[0.3em] uppercase transition-colors duration-300 ${
               useLightText ? "text-white/70 drop-shadow-sm" : "text-muted-foreground"

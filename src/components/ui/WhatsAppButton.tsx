@@ -70,7 +70,7 @@ export function WhatsAppButton() {
                   <span className="text-white font-serif text-sm">DP</span>
                 </div>
                 <div className="flex-1">
-                  <p className="text-white font-medium text-sm">Debora Pieri</p>
+                  <p className="text-white font-medium text-sm">Débora Pieri</p>
                   <p className="text-white/70 text-xs">Arquiteta</p>
                 </div>
                 <button
@@ -86,7 +86,7 @@ export function WhatsAppButton() {
             <div className="p-4 bg-[#ECE5DD] min-h-[120px]">
               <div className="bg-white rounded-lg p-3 shadow-sm max-w-[85%]">
                 <p className="text-sm text-gray-800">
-                  Olá! 👋 Sou a Debora Pieri, arquiteta. Como posso ajudar você hoje?
+                  Olá! 👋 Sou a Débora Pieri, arquiteta. Como posso ajudar você hoje?
                 </p>
                 <span className="text-[10px] text-gray-400 mt-1 block text-right">
                   Agora
