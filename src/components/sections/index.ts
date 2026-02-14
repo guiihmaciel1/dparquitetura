@@ -1,4 +1,4 @@
-﻿export { HeroSection } from "./HeroSection";
+export { HeroSection } from "./HeroSection";
 export { AboutPreview } from "./AboutPreview";
 export { ProjectsPreview } from "./ProjectsPreview";
 export { ServicesPreview } from "./ServicesPreview";
