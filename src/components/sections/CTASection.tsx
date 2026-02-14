@@ -70,7 +70,7 @@ export function CTASection() {
           >
             <Link
               href="/contato"
-              className="group flex items-center gap-3 px-10 py-4 bg-accent text-primary font-medium text-sm tracking-wide hover:bg-accent-dark transition-all duration-300"
+              className="group flex items-center gap-3 px-10 py-4 bg-primary text-white font-medium text-sm tracking-wide hover:bg-accent-dark transition-all duration-300"
             >
               Agendar Conversa
               <ArrowRight
@@ -82,7 +82,7 @@ export function CTASection() {
               href="https://wa.me/5517991883103?text=Olá! Gostaria de saber mais sobre os serviços de arquitetura."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-10 py-4 border-2 border-accent text-accent text-sm tracking-wide hover:bg-accent hover:text-primary font-medium transition-all duration-300"
+              className="flex items-center gap-3 px-10 py-4 border-2 border-primary text-primary text-sm tracking-wide hover:bg-primary hover:text-white font-medium transition-all duration-300"
             >
               <MessageCircle size={16} />
               WhatsApp

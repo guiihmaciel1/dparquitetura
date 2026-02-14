@@ -19,11 +19,7 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  
-  // Na home, antes de scrollar, usa texto claro (fundo escuro da Hero)
   const isHome = pathname === "/";
-  const useLightText = isHome && !isScrolled;
-  const useSolidHeader = !isHome || isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,16 +42,12 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        useSolidHeader
+        isScrolled
           ? "bg-background/90 backdrop-blur-md shadow-sm py-4"
           : "bg-transparent py-6"
       }`}
     >
-      <div
-        className={`container-custom flex items-center justify-between ${
-          useLightText ? "text-white" : ""
-        }`}
-      >
+      <div className="container-custom flex items-center justify-between">
         {/* Logo */}
         <a href="/" onClick={handleHomeClick} className="group cursor-pointer">
           <motion.div
@@ -64,21 +56,17 @@ export function Header() {
             transition={{ duration: 0.6 }}
             className="flex flex-col"
           >
-            <span className={`font-serif text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 group-hover:text-accent ${
-              useLightText ? "text-white drop-shadow-sm" : "text-foreground"
-            }`}>
+            <span className="font-serif text-2xl md:text-3xl font-medium tracking-tight transition-colors duration-300 group-hover:text-primary text-foreground">
               Débora Pieri
             </span>
-            <span className={`text-[10px] md:text-xs tracking-[0.3em] uppercase transition-colors duration-300 ${
-              useLightText ? "text-white/70 drop-shadow-sm" : "text-muted-foreground"
-            }`}>
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase transition-colors duration-300 text-muted-foreground">
               Arquitetura
             </span>
           </motion.div>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className={`hidden md:flex items-center gap-8 ${useLightText ? "text-white" : ""}`}>
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link, index) => (
             <motion.div
               key={link.href}
@@ -90,26 +78,18 @@ export function Header() {
                 <a
                   href="/"
                   onClick={handleHomeClick}
-                  className={`relative text-sm tracking-wide transition-colors duration-300 group cursor-pointer ${
-                    useLightText 
-                      ? "text-white hover:text-accent drop-shadow-sm" 
-                      : "text-foreground/80 hover:text-foreground"
-                  }`}
+                  className="relative text-sm tracking-wide transition-colors duration-300 group cursor-pointer text-foreground/80 hover:text-foreground"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </a>
               ) : (
                 <Link
                   href={link.href}
-                  className={`relative text-sm tracking-wide transition-colors duration-300 group ${
-                    useLightText 
-                      ? "text-white hover:text-accent drop-shadow-sm" 
-                      : "text-foreground/80 hover:text-foreground"
-                  }`}
+                  className="relative text-sm tracking-wide transition-colors duration-300 group text-foreground/80 hover:text-foreground"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full" />
                 </Link>
               )}
             </motion.div>
@@ -119,9 +99,7 @@ export function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden p-2 transition-colors duration-300 ${
-            useLightText ? "text-white" : "text-foreground"
-          }`}
+          className="md:hidden p-2 transition-colors duration-300 text-foreground"
           aria-label="Menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -153,7 +131,7 @@ export function Header() {
                         setIsMobileMenuOpen(false);
                         handleHomeClick(e);
                       }}
-                      className="block py-2 text-lg text-foreground/80 hover:text-accent transition-colors cursor-pointer"
+                      className="block py-2 text-lg text-foreground/80 hover:text-primary transition-colors cursor-pointer"
                     >
                       {link.label}
                     </a>
@@ -161,7 +139,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block py-2 text-lg text-foreground/80 hover:text-accent transition-colors"
+                      className="block py-2 text-lg text-foreground/80 hover:text-primary transition-colors"
                     >
                       {link.label}
                     </Link>

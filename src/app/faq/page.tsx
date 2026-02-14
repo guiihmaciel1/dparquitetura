@@ -222,7 +222,7 @@ export default function FAQPage() {
             </p>
             <Link
               href="/contato"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-primary font-medium text-sm tracking-wide hover:bg-accent-dark transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-medium text-sm tracking-wide hover:bg-accent-dark transition-colors"
             >
               Fale Comigo
             </Link>

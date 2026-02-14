@@ -167,7 +167,7 @@ export default function ProjetosPage() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`px-5 py-2 text-sm tracking-wide transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-primary text-primary-foreground"
+                    ? "bg-primary text-white"
                     : "bg-muted text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -203,10 +203,10 @@ export default function ProjetosPage() {
                       />
                       
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                        <div className="w-12 h-12 border border-primary-foreground rounded-full flex items-center justify-center">
+                      <div className="absolute inset-0 bg-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <div className="w-12 h-12 border border-white rounded-full flex items-center justify-center">
                           <ArrowUpRight
-                            className="text-primary-foreground"
+                            className="text-white"
                             size={20}
                           />
                         </div>

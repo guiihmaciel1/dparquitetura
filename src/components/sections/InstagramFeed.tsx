@@ -83,7 +83,7 @@ export function InstagramFeed() {
               />
 
               {/* Overlay no hover */}
-              <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <Instagram size={32} className="text-white" />
               </div>
             </motion.a>

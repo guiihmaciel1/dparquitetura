@@ -121,7 +121,7 @@ export default function SobrePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="absolute bottom-4 left-4 bg-accent text-primary-foreground px-5 py-4 shadow-lg"
+                className="absolute bottom-4 left-4 bg-primary text-white px-5 py-4 shadow-lg"
               >
                 <Award size={24} className="mb-2" />
                 <span className="block text-xs tracking-wider uppercase">CAU</span>
@@ -182,7 +182,7 @@ export default function SobrePage() {
       </section>
 
       {/* Philosophy Quote */}
-      <section className="py-20 md:py-28 bg-primary text-primary-foreground">
+      <section className="py-20 md:py-28 bg-muted border-y border-border">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -191,13 +191,13 @@ export default function SobrePage() {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <blockquote className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-8">
+            <blockquote className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-8 text-foreground">
               &ldquo;Arquitetura que Conecta{" "}
-              <span className="text-accent">Forma</span>,{" "}
-              <span className="text-accent">Função</span> e{" "}
-              <span className="text-accent">Identidade</span>&rdquo;
+              <span className="text-primary">Forma</span>,{" "}
+              <span className="text-primary">Função</span> e{" "}
+              <span className="text-primary">Identidade</span>&rdquo;
             </blockquote>
-            <p className="text-primary-foreground/70 text-lg">
+            <p className="text-muted-foreground text-lg">
               Cada projeto é uma oportunidade de criar espaços que refletem 
               a essência de quem vai habitá-los.
             </p>

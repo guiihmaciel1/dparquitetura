@@ -94,9 +94,9 @@ export function ProjectsPreview() {
                   />
                   
                   {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <div className="w-12 h-12 border border-primary-foreground rounded-full flex items-center justify-center">
-                      <ArrowUpRight className="text-primary-foreground" size={20} />
+                  <div className="absolute inset-0 bg-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                    <div className="w-12 h-12 border border-white rounded-full flex items-center justify-center">
+                      <ArrowUpRight className="text-white" size={20} />
                     </div>
                   </div>
                 </div>

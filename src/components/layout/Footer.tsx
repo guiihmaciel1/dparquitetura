@@ -38,26 +38,26 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-muted text-foreground border-t border-border">
       {/* Main Footer */}
       <div className="container-custom py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <a href="/" onClick={handleHomeClick} className="inline-block mb-6 cursor-pointer">
-              <span className="font-serif text-2xl font-medium">
+              <span className="font-serif text-2xl font-medium text-foreground">
                 Débora Pieri
               </span>
-              <span className="block text-[10px] tracking-[0.3em] uppercase text-primary-foreground/60">
+              <span className="block text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
                 Arquitetura
               </span>
             </a>
-            <p className="text-sm text-primary-foreground/70 leading-relaxed mb-4">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Arquitetura que Conecta Forma, Função e Identidade. 
               Atendimento humanizado com sensibilidade e dedicação.
             </p>
             {/* CAU Badge */}
-            <div className="flex items-center gap-2 text-xs text-primary-foreground/50 mb-6">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground mb-6">
               <Award size={14} />
               <span>CAU A135139-7</span>
             </div>
@@ -69,7 +69,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center border border-primary-foreground/20 hover:border-accent hover:text-accent transition-colors duration-300"
+                  className="w-10 h-10 flex items-center justify-center border border-border text-muted-foreground hover:border-primary hover:text-primary transition-colors duration-300"
                   aria-label={social.label}
                 >
                   <social.icon size={18} />
@@ -78,12 +78,12 @@ export function Footer() {
             </div>
             
             {/* Google Reviews Badge */}
-            <GoogleReviewsBadge variant="dark" />
+            <GoogleReviewsBadge variant="light" />
           </div>
 
           {/* Navigation Column */}
           <div>
-            <h4 className="text-sm font-medium tracking-wider uppercase mb-6">
+            <h4 className="text-sm font-medium tracking-wider uppercase mb-6 text-foreground">
               Navegação
             </h4>
             <ul className="space-y-3">
@@ -93,14 +93,14 @@ export function Footer() {
                     <a
                       href="/"
                       onClick={handleHomeClick}
-                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300 cursor-pointer"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300 cursor-pointer"
                     >
                       {link.label}
                     </a>
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -112,7 +112,7 @@ export function Footer() {
 
           {/* Services Column */}
           <div>
-            <h4 className="text-sm font-medium tracking-wider uppercase mb-6">
+            <h4 className="text-sm font-medium tracking-wider uppercase mb-6 text-foreground">
               Serviços
             </h4>
             <ul className="space-y-3">
@@ -120,7 +120,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -131,7 +131,7 @@ export function Footer() {
 
           {/* Contact Column */}
           <div>
-            <h4 className="text-sm font-medium tracking-wider uppercase mb-6">
+            <h4 className="text-sm font-medium tracking-wider uppercase mb-6 text-foreground">
               Contato
             </h4>
             <ul className="space-y-4">
@@ -140,7 +140,7 @@ export function Footer() {
                   href="https://wa.me/5517991883103"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
+                  className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <Phone size={18} className="mt-0.5 flex-shrink-0" />
                   <span>(17) 99188-3103</span>
@@ -151,7 +151,7 @@ export function Footer() {
                   href="https://maps.google.com/?q=Av.+Fernando+Costa,+2451+-+Centro,+Mirassol+-+SP,+15130-025"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-300"
+                  className="flex items-start gap-3 text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   <MapPin size={18} className="mt-0.5 flex-shrink-0" />
                   <span>
@@ -170,8 +170,8 @@ export function Footer() {
         </div>
 
         {/* Map Section */}
-        <div className="mt-12 pt-12 border-t border-primary-foreground/10">
-          <h4 className="text-sm font-medium tracking-wider uppercase mb-6 text-center">
+        <div className="mt-12 pt-12 border-t border-border">
+          <h4 className="text-sm font-medium tracking-wider uppercase mb-6 text-center text-foreground">
             Nossa Localização
           </h4>
           <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden">
@@ -179,38 +179,38 @@ export function Footer() {
               src="https://maps.google.com/maps?q=Av.+Fernando+Costa,+2451,+Centro,+Mirassol,+SP,+15130-025&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
-              style={{ border: 0, filter: "grayscale(100%) contrast(1.1)" }}
+              style={{ border: 0, filter: "grayscale(50%) contrast(1.05)" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Localização Débora Pieri Arquitetura"
               className="absolute inset-0"
             />
-            <div className="absolute inset-0 pointer-events-none border border-primary-foreground/10 rounded-lg" />
+            <div className="absolute inset-0 pointer-events-none border border-border rounded-lg" />
           </div>
-          <p className="text-xs text-primary-foreground/50 text-center mt-4">
+          <p className="text-xs text-muted-foreground text-center mt-4">
             Av. Fernando Costa, 2451 - Prédio Comercial Miracenter, Centro, Mirassol - SP
           </p>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-primary-foreground/10">
+      <div className="border-t border-border">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-primary-foreground/50">
+          <p className="text-xs text-muted-foreground">
             © {currentYear} Débora Pieri Arquitetura. Todos os direitos
             reservados.
           </p>
           <div className="flex gap-6">
             <Link
               href="/privacidade"
-              className="text-xs text-primary-foreground/50 hover:text-accent transition-colors"
+              className="text-xs text-muted-foreground hover:text-primary transition-colors"
             >
               Política de Privacidade
             </Link>
             <Link
               href="/termos"
-              className="text-xs text-primary-foreground/50 hover:text-accent transition-colors"
+              className="text-xs text-muted-foreground hover:text-primary transition-colors"
             >
               Termos de Uso
             </Link>

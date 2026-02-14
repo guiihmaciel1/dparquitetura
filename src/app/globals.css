@@ -1,43 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  /* Cores principais - Paleta sofisticada para arquitetura */
-  --background: #FAFAF9;
-  --foreground: #1C1917;
+  /* Cores principais - Paleta clara e clean para arquitetura */
+  --background: #FFFFFF;
+  --foreground: #44403C;
   
   /* Cores da marca */
-  --primary: #292524;
-  --primary-foreground: #FAFAF9;
+  --primary: #D4A574;
+  --primary-foreground: #FFFFFF;
   --secondary: #A8A29E;
-  --accent: #D4A574;
-  --accent-dark: #B8956A;
+  --accent: #C9956A;
+  --accent-dark: #B08050;
   
   /* Cores neutras */
-  --muted: #F5F5F4;
+  --muted: #F8F5F1;
   --muted-foreground: #78716C;
-  --border: #E7E5E4;
+  --border: #E8E2DB;
+  
+  /* Cor escura auxiliar (para overlays e elementos pontuais) */
+  --dark: #3D3530;
   
   /* Sombras */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0C0A09;
-    --foreground: #FAFAF9;
-    
-    --primary: #1C1917;
-    --primary-foreground: #FAFAF9;
-    --secondary: #57534E;
-    --accent: #D4A574;
-    --accent-dark: #C4956A;
-    
-    --muted: #1C1917;
-    --muted-foreground: #A8A29E;
-    --border: #292524;
-  }
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08);
 }
 
 @theme inline {
@@ -51,6 +37,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-dark: var(--dark);
   
   --font-sans: var(--font-outfit);
   --font-serif: var(--font-cormorant);

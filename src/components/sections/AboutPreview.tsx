@@ -34,7 +34,7 @@ export function AboutPreview() {
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/10 to-transparent" />
             </div>
             
             {/* CAU badge */}
@@ -43,7 +43,7 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute bottom-4 left-4 bg-accent text-primary p-5 shadow-lg"
+              className="absolute bottom-4 left-4 bg-primary text-white p-5 shadow-lg"
             >
               <Award size={20} className="mb-1" />
               <span className="block text-xs tracking-wider uppercase">CAU</span>

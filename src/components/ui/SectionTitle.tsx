@@ -18,9 +18,9 @@ export function SectionTitle({
   light = false,
 }: SectionTitleProps) {
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
-  const textColor = light ? "text-primary-foreground" : "text-foreground";
+  const textColor = light ? "text-white" : "text-foreground";
   const mutedColor = light
-    ? "text-primary-foreground/60"
+    ? "text-white/70"
     : "text-muted-foreground";
 
   return (

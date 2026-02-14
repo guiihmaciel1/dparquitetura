@@ -209,7 +209,7 @@ export default function ServicosPage() {
                       blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAgIBAwQDAAAAAAAAAAAAAQIDBAAFERIGITFBUWFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAZEQACAwEAAAAAAAAAAAAAAAABAgADESH/2gAMAwEAAhEDEEA/AMq0fqLUdMhkgpWGijkbe4EjIHYbgEjuOx7Y5/Rl1yxYvahJauTPPK/l5GLMfsk5xjJGTsdBuf/Z"
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark/10 to-transparent" />
                   </div>
 
                   {/* Content */}
@@ -265,13 +265,12 @@ export default function ServicosPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 md:py-28 bg-primary text-primary-foreground">
+      <section className="py-20 md:py-28 bg-muted border-y border-border">
         <div className="container-custom">
           <SectionTitle
             subtitle="Metodologia"
             title="Como Trabalho"
             description="Um processo estruturado com atendimento humanizado, ouvindo cada detalhe com sensibilidade e paciência."
-            light
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-16">
@@ -284,17 +283,17 @@ export default function ServicosPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative"
               >
-                <span className="block text-4xl font-serif text-accent/50 mb-4">
+                <span className="block text-4xl font-serif text-primary/50 mb-4">
                   {item.step}
                 </span>
-                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
-                <p className="text-sm text-primary-foreground/60">
+                <h3 className="text-lg font-medium text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">
                   {item.description}
                 </p>
 
                 {/* Connector line */}
                 {index < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full h-[1px] bg-primary-foreground/10" />
+                  <div className="hidden lg:block absolute top-8 left-full w-full h-[1px] bg-border" />
                 )}
               </motion.div>
             ))}
@@ -325,7 +324,7 @@ export default function ServicosPage() {
               </p>
               <Link
                 href="/contato"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground text-sm tracking-wide hover:bg-accent transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white text-sm tracking-wide hover:bg-accent-dark transition-all duration-300"
               >
                 Agendar Conversa
                 <ArrowRight size={16} />
